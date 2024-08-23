@@ -1,0 +1,40 @@
+﻿<Page x:Class="Taskly.ToDoList"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Taskly"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="400"
+      Title="Taskly">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="10"/>
+            <RowDefinition  Height="*" />
+            <RowDefinition  Height="10"/>
+            <RowDefinition  Height="70"/>
+            <RowDefinition  Height="5"/>
+            <RowDefinition  Height="30"/>
+            <RowDefinition  Height="5"/>
+            <RowDefinition  Height="50"/>
+            <RowDefinition  Height="10"/>
+        </Grid.RowDefinitions>
+
+        <DatePicker x:Name="Todo_DatePicker" Grid.Column="1" Grid.Row="5" VerticalAlignment="Center"/>
+        <CheckBox x:Name="Todo_DatePicker_Check" Grid.Column="2" Grid.Row="5" Content="Add date?" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Button Click="Button_AddToDo_Click" x:Name="Button_AddToDo" Grid.Column="1" Grid.Row="7" Content="{Binding ButtonContent_AddToList}" />
+        <Button Click="Button_RemoveToDo_Click" x:Name="Button_RemoveToDo" Grid.Column="2" Grid.Row="7" Content="{Binding ButtonContent_AddToList}" />
+        <TextBox x:Name="ToDo_TextInput" Grid.ColumnSpan="3" Grid.Row="3" Grid.Column="1" Background="LightGray" Width="auto" Height="auto" ></TextBox>
+        <ScrollViewer Grid.ColumnSpan="3" Grid.Row="1" Grid.Column="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="ToDoList_Stack" Height="auto" Width="auto" Background="DarkGray"></StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
