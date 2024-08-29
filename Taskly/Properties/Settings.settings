@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Taskly.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="FilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">todoData.json</Value>
+    </Setting>
+    <Setting Name="SettingFilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">settingsData.bin</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

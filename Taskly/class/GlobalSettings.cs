@@ -1,27 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Taskly
+﻿namespace Taskly
 {
     public static class GlobalSettings
     {
         private static int _languageIndex = 0;
         private static int _themeIndex = 0;
-        private static string _filePath = "todoData.json";
-        private static string _settingsFilePath = "settingsData.bin";
+        private static string _filePath = Properties.Settings.Default.FilePath;
+        private static string _settingsFilePath = Properties.Settings.Default.SettingFilePath;
         private static int _currentPage = 0;
 
         public static string FilePath
-            { 
-                get { return _filePath; } 
-            }
+        {
+            get { return _filePath; }
+        }
+
         public static string SettingsFilePath
-            {
-                get { return _settingsFilePath; }
-            }
+        {
+            get { return _settingsFilePath; }
+        }
+
         public static int Language
         {
             get { return _languageIndex; }
@@ -34,6 +30,7 @@ namespace Taskly
                 }
             }
         }
+
         public static event Action<int> OnLanguageChanged;
 
         public static int Theme
@@ -60,8 +57,7 @@ namespace Taskly
                 }
             }
         }
-        public static event Action <int> OnThemeChanged; 
 
-        
+        public static event Action<int> OnThemeChanged;
     }
 }

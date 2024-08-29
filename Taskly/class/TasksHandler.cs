@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using System.Windows;
-using System.IO;
+﻿using System.IO;
 using System.Text.Json;
-
 
 namespace Taskly
 {
@@ -15,13 +7,12 @@ namespace Taskly
     {
         public List<ToDo_Event> toDo_Events = new List<ToDo_Event>();
 
-        public bool AddTask(int ID, string inTaskDescription, bool inTaskHasDate, DateTime inTaskDate) 
+        public bool AddTask(int ID, string inTaskDescription, bool inTaskHasDate, DateTime inTaskDate)
         {
-
             bool processComplete = false;
             int tempCount = toDo_Events.Count;
             toDo_Events.Add
-            (            
+            (
                 new ToDo_Event
                 {
                     Task = inTaskDescription,
@@ -41,9 +32,9 @@ namespace Taskly
         public bool RemoveTask(int deleteCount, int[] eventToDelete)
         {
             bool processComplete = false;
-            for (int i = deleteCount-1; i >= 0; i--)
+            for (int i = deleteCount - 1; i >= 0; i--)
             {
-                if (eventToDelete[i] != 9999) 
+                if (eventToDelete[i] != 9999)
                 {
                     toDo_Events.RemoveAt(eventToDelete[i]);
                 }
@@ -56,7 +47,6 @@ namespace Taskly
             return processComplete;
         }
 
-
         public bool SaveToFile(List<ToDo_Event> todoList, string filePath)
         {
             bool processComplete = false;
@@ -67,14 +57,16 @@ namespace Taskly
             return processComplete;
         }
 
-
         public List<ToDo_Event> LoadFromFile(string filePath)
         {
             if (!File.Exists(filePath))
                 return new List<ToDo_Event>();
 
             var json = File.ReadAllText(filePath);
-            return JsonSerializer.Deserialize<List<ToDo_Event>>(json);
+            if (json.Length > 0)
+                return JsonSerializer.Deserialize<List<ToDo_Event>>(json);
+            else
+                return new List<ToDo_Event>();
         }
     }
 }

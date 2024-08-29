@@ -1,31 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Taskly
+﻿namespace Taskly
 {
     public class Lang
     {
-        public readonly string _name;
-        public readonly string _btnAddToList;
-        public readonly string _btnRemoveFromList;
-        public readonly string _btnSettings;
-        public readonly string _date;
-        public readonly string _st_newToDo_added;
-        public readonly string _messDateFromPast;
-        public readonly string _btnSettings_ToDo;
-        public readonly string _lang;
-        public readonly string _theme;
-        public readonly string _selectedItem;
+        private readonly string _name;
+        private readonly string _btnAddToList;
+        private readonly string _btnRemoveFromList;
+        private readonly string _btnSettings;
+        private readonly string _date;
+        private readonly string _st_newToDo_added;
+        private readonly string _messDateFromPast;
+        private readonly string _btnSettings_ToDo;
+        private readonly string _lang;
+        private readonly string _theme;
+        private readonly string _selectedItem;
 
         public string Name
         {
             get { return _name; }
             init { _name = value; }
         }
+
         public string BtnAddToList
         {
             get { return _btnAddToList; }
@@ -86,9 +80,8 @@ namespace Taskly
             init { _selectedItem = value; }
         }
 
-
-        public Lang(string LangName, string trAddToList, string trRemoveFromList, string trSettings, string transDate, string trNewToDo_added, string trMessDateFromPast, string trSettings_moveToTodo, string trLanguage, string trTheme, string trSelectedItem) 
-        { 
+        public Lang(string LangName, string trAddToList, string trRemoveFromList, string trSettings, string transDate, string trNewToDo_added, string trMessDateFromPast, string trSettings_moveToTodo, string trLanguage, string trTheme, string trSelectedItem)
+        {
             Name = LangName;
             BtnAddToList = trAddToList;
             BtnRemoveFromList = trRemoveFromList;
@@ -101,6 +94,5 @@ namespace Taskly
             Theme = trTheme;
             SelectedItem = trSelectedItem;
         }
-
     }
 }
